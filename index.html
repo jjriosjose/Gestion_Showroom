@@ -859,3 +859,45 @@ document.addEventListener('DOMContentLoaded', function(){
 
 </body>
 </html>
+/* 1) Flecha del SELECT (reemplaza la nativa y pones tu color) */
+select{
+  -webkit-appearance:none; -moz-appearance:none; appearance:none;
+  background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'>\
+<path d='M1 1l5 5 5-5' fill='none' stroke='%2390a0b7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/>\
+</svg>");
+  background-repeat:no-repeat;
+  background-position: right 10px center;
+  background-size:12px 8px;
+  padding-right:32px; /* deja espacio para la flecha */
+}
+
+/* 2) Icono del calendario (Chrome/Edge/WebKit) */
+input[type="date"]::-webkit-calendar-picker-indicator{
+  background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>\
+<path d='M7 2v3M17 2v3M3 9h18M5 5h14a2 2 0 012 2v13a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z' fill='none' stroke='%2390a0b7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/>\
+</svg>");
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:18px 18px;
+  opacity:1; /* asegura que se vea */
+  filter:none; /* por si tenías filtros */
+}
+
+/* 3) Icono del reloj (Chrome/Edge/WebKit) */
+input[type="time"]::-webkit-calendar-picker-indicator{
+  background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>\
+<circle cx='12' cy='12' r='9' fill='none' stroke='%2390a0b7' stroke-width='2'/>\
+<path d='M12 7v5l3 2' fill='none' stroke='%2390a0b7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/>\
+</svg>");
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:18px 18px;
+  opacity:1;
+  filter:none;
+}
+
+/* Opcional: quitar los spinner de hora si molestan */
+input[type="time"]::-webkit-inner-spin-button{ display:none; }
